@@ -1,0 +1,18 @@
+use chrono::{DateTime, Local, NaiveDateTime};
+use serde::{Deserialize, Serialize};
+use sqlx::{Error, FromRow};
+use sqlx::mysql::MySqlQueryResult;
+
+#[derive(FromRow,Debug, Clone, PartialEq, Serialize, Deserialize)]
+//sql table name: {{ struct.table_name }}
+pub struct {{ struct.struct_name }} {
+    {{#each struct.struct_fields}}
+        pub {{{this}}}
+    {{/each}}
+}
+
+impl {{ struct.struct_name }} {}
+
+
+
+
